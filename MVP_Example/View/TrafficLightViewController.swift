@@ -19,23 +19,22 @@ class TrafficLightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        trafficLightPresenter = TrafficLightPresenter()
-        trafficLightPresenter.setViewDelegate(trafficLightViewDelegate: self)
+        
+        setupPresenterViewDelegate()
         
         setupUI()
     }
     
     @IBAction func redLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Rojo")
+        trafficLightPresenter.trafficLightColorSelected(color: "Red")
     }
     
     @IBAction func yellowLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Amarillo")
+        trafficLightPresenter.trafficLightColorSelected(color: "Yellow")
     }
     
     @IBAction func greenLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Verde")
+        trafficLightPresenter.trafficLightColorSelected(color: "Green")
     }
     
 }
@@ -49,7 +48,14 @@ extension TrafficLightViewController {
 }
 
 extension TrafficLightViewController : TrafficLightViewDelegate {
+    
+    func setupPresenterViewDelegate() {
+        self.trafficLightPresenter = TrafficLightPresenter()
+        self.trafficLightPresenter.setViewDelegate(trafficLightViewDelegate: self)
+    }
+    
     func displayTrafficLight(description: (String)) {
         descriptionLabel.text = description
     }
+    
 }

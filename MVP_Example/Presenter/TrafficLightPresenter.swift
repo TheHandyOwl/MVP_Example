@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TrafficLightViewDelegate : NSObjectProtocol {
-    func displayTrafficLight(description:(String))
+    func displayTrafficLight(description : String)
 }
 
 class TrafficLightPresenter {
