@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Traffic Light View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TrafficLightViewController" customModule="MVP_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQQ-es-H65">
+                                <rect key="frame" x="169.5" y="124" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hQQ-es-H65" secondAttribute="height" multiplier="1:1" id="RyL-3q-xDq"/>
+                                    <constraint firstAttribute="width" constant="75" id="ZzS-Tt-7Qz"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="redLightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bd-Qj-gDd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAH-aL-WW9">
+                                <rect key="frame" x="169.5" y="219" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VAH-aL-WW9" secondAttribute="height" multiplier="1:1" id="fgq-Vt-hMC"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="yellowLightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1K1-x8-eC4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iN2-cW-ctF">
+                                <rect key="frame" x="169.5" y="314" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iN2-cW-ctF" secondAttribute="height" multiplier="1:1" id="3aD-VY-H2N"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="greenLightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5je-rw-xsL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push a button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDC-FK-asG">
+                                <rect key="frame" x="36" y="425" width="342" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iN2-cW-ctF" firstAttribute="width" secondItem="VAH-aL-WW9" secondAttribute="width" id="5gR-0f-ZYU"/>
+                            <constraint firstItem="iN2-cW-ctF" firstAttribute="top" secondItem="VAH-aL-WW9" secondAttribute="bottom" constant="20" id="7HQ-1b-qFm"/>
+                            <constraint firstItem="VAH-aL-WW9" firstAttribute="centerX" secondItem="hQQ-es-H65" secondAttribute="centerX" id="Aqu-Gi-9wC"/>
+                            <constraint firstItem="hQQ-es-H65" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Dbm-7t-TUg"/>
+                            <constraint firstItem="xDC-FK-asG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="HUI-Bi-abq"/>
+                            <constraint firstItem="xDC-FK-asG" firstAttribute="top" secondItem="iN2-cW-ctF" secondAttribute="bottom" constant="36" id="P0o-G4-1tO"/>
+                            <constraint firstItem="hQQ-es-H65" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VdS-2w-6n6"/>
+                            <constraint firstItem="xDC-FK-asG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-36" id="Yae-hr-0sy"/>
+                            <constraint firstItem="VAH-aL-WW9" firstAttribute="top" secondItem="hQQ-es-H65" secondAttribute="bottom" constant="20" id="ggq-cd-t54"/>
+                            <constraint firstItem="VAH-aL-WW9" firstAttribute="width" secondItem="hQQ-es-H65" secondAttribute="width" id="pOe-Uf-Pyi"/>
+                            <constraint firstItem="iN2-cW-ctF" firstAttribute="centerX" secondItem="VAH-aL-WW9" secondAttribute="centerX" id="tza-Tj-Ihl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="xDC-FK-asG" id="QJ0-iL-TL5"/>
+                        <outlet property="greenLightButton" destination="iN2-cW-ctF" id="1dA-pS-d21"/>
+                        <outlet property="redLightButton" destination="hQQ-es-H65" id="oOi-ay-XAP"/>
+                        <outlet property="yellowLightButton" destination="VAH-aL-WW9" id="LfE-zw-U80"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
 </document>
