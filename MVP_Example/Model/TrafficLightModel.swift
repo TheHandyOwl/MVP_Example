@@ -10,8 +10,14 @@ import Foundation
 
 struct TrafficLightModel {
     
-    let colorName   : String
+    let colorName   : ColorAvailable
     let description : String
+    
+    enum ColorAvailable {
+        case Red
+        case Yellow
+        case Green
+    }
     
 }
 
