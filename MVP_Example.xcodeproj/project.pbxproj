@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		07CD080D2494BF6D00AEB5E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD080C2494BF6D00AEB5E5 /* AppDelegate.swift */; };
 		07CD080F2494BF6D00AEB5E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD080E2494BF6D00AEB5E5 /* SceneDelegate.swift */; };
-		07CD08112494BF6D00AEB5E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08102494BF6D00AEB5E5 /* ViewController.swift */; };
+		07CD08112494BF6D00AEB5E5 /* TrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08102494BF6D00AEB5E5 /* TrafficLightViewController.swift */; };
 		07CD08142494BF6D00AEB5E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CD08122494BF6D00AEB5E5 /* Main.storyboard */; };
 		07CD08162494BF7000AEB5E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CD08152494BF7000AEB5E5 /* Assets.xcassets */; };
 		07CD08192494BF7000AEB5E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CD08172494BF7000AEB5E5 /* LaunchScreen.storyboard */; };
+		07CD08252494BFC100AEB5E5 /* TrafficLightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08242494BFC100AEB5E5 /* TrafficLightService.swift */; };
+		07CD08272494BFCE00AEB5E5 /* TrafficLightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08262494BFCE00AEB5E5 /* TrafficLightModel.swift */; };
+		07CD08292494C00000AEB5E5 /* TrafficLightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08282494C00000AEB5E5 /* TrafficLightPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07CD08092494BF6D00AEB5E5 /* MVP_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CD080C2494BF6D00AEB5E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CD080E2494BF6D00AEB5E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		07CD08102494BF6D00AEB5E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07CD08102494BF6D00AEB5E5 /* TrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightViewController.swift; sourceTree = "<group>"; };
 		07CD08132494BF6D00AEB5E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07CD08152494BF7000AEB5E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07CD08182494BF7000AEB5E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07CD081A2494BF7000AEB5E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07CD08242494BFC100AEB5E5 /* TrafficLightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightService.swift; sourceTree = "<group>"; };
+		07CD08262494BFCE00AEB5E5 /* TrafficLightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightModel.swift; sourceTree = "<group>"; };
+		07CD08282494C00000AEB5E5 /* TrafficLightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		07CD080B2494BF6D00AEB5E5 /* MVP_Example */ = {
 			isa = PBXGroup;
 			children = (
+				07CD08202494BF7F00AEB5E5 /* Helper */,
+				07CD08212494BF8900AEB5E5 /* Model */,
+				07CD08222494BF8E00AEB5E5 /* View */,
+				07CD08232494BF9300AEB5E5 /* Presenter */,
 				07CD080C2494BF6D00AEB5E5 /* AppDelegate.swift */,
 				07CD080E2494BF6D00AEB5E5 /* SceneDelegate.swift */,
-				07CD08102494BF6D00AEB5E5 /* ViewController.swift */,
 				07CD08122494BF6D00AEB5E5 /* Main.storyboard */,
 				07CD08152494BF7000AEB5E5 /* Assets.xcassets */,
 				07CD08172494BF7000AEB5E5 /* LaunchScreen.storyboard */,
 				07CD081A2494BF7000AEB5E5 /* Info.plist */,
 			);
 			path = MVP_Example;
+			sourceTree = "<group>";
+		};
+		07CD08202494BF7F00AEB5E5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				07CD08242494BFC100AEB5E5 /* TrafficLightService.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		07CD08212494BF8900AEB5E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07CD08262494BFCE00AEB5E5 /* TrafficLightModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07CD08222494BF8E00AEB5E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07CD08102494BF6D00AEB5E5 /* TrafficLightViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07CD08232494BF9300AEB5E5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07CD08282494C00000AEB5E5 /* TrafficLightPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07CD08112494BF6D00AEB5E5 /* ViewController.swift in Sources */,
+				07CD08252494BFC100AEB5E5 /* TrafficLightService.swift in Sources */,
+				07CD08112494BF6D00AEB5E5 /* TrafficLightViewController.swift in Sources */,
 				07CD080D2494BF6D00AEB5E5 /* AppDelegate.swift in Sources */,
+				07CD08292494C00000AEB5E5 /* TrafficLightPresenter.swift in Sources */,
 				07CD080F2494BF6D00AEB5E5 /* SceneDelegate.swift in Sources */,
+				07CD08272494BFCE00AEB5E5 /* TrafficLightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
