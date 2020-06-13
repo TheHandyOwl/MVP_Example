@@ -26,7 +26,13 @@ class TrafficLightPresenter {
     }
 
     func trafficLightColorSelected (color: String) {
-        trafficLightViewDelegate?.displayTrafficLight(description: color)
+        trafficLightService?.getTrafficLight(color: color, callback: { (model) in
+            if let model = model {
+                trafficLightViewDelegate?.displayTrafficLight(description: model.description)
+            } else {
+                trafficLightViewDelegate?.displayTrafficLight(description: "No color description available")
+            }
+        })
     }
     
 }
