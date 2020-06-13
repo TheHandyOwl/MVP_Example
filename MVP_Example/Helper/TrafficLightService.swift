@@ -10,4 +10,18 @@ import Foundation
 
 class TrafficLightService {
     
+    func getTrafficLight( color: String, callback: (TrafficLightModel?) -> Void ) {
+        let trafficLights = [
+        TrafficLightModel(colorName: "Red", description: "Stop"),
+        TrafficLightModel(colorName: "Yellow", description: "Keep calm!"),
+        TrafficLightModel(colorName: "Green", description: "Go")
+        ]
+        
+        if let foundTrafficLight = trafficLights.filter({ $0.colorName == color }).first {
+            callback(foundTrafficLight)
+        } else {
+            callback(nil)
+        }
+    }
+    
 }
