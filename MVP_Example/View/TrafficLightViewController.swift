@@ -26,15 +26,15 @@ class TrafficLightViewController: UIViewController {
     }
     
     @IBAction func redLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Red")
+        trafficLightPresenter.trafficLightColorSelected(color: .Red)
     }
     
     @IBAction func yellowLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Yellow")
+        trafficLightPresenter.trafficLightColorSelected(color: .Yellow)
     }
     
     @IBAction func greenLightAction(_ sender: Any) {
-        trafficLightPresenter.trafficLightColorSelected(color: "Green")
+        trafficLightPresenter.trafficLightColorSelected(color: .Green)
     }
     
 }

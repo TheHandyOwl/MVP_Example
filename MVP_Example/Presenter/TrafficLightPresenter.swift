@@ -25,7 +25,7 @@ class TrafficLightPresenter {
         trafficLightViewDelegate = delegate as? TrafficLightViewDelegate
     }
 
-    func trafficLightColorSelected (color: String) {
+    func trafficLightColorSelected (color: TrafficLightModel.ColorAvailable) {
         trafficLightService?.getTrafficLight(color: color, callback: { (model) in
             if let model = model {
                 trafficLightViewDelegate?.displayTrafficLight(description: model.description)
