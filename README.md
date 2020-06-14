@@ -9,5 +9,5 @@ MVP Architecture project using Swift 5.
 
   - MVP_Example, the basic one
   - MVP_TableView, loading data from a service
-  - MVP_Navigation, navigation from MainView to DetailView and loading date from 2 endpoints
+  - MVP_Navigation, navigation from MainView to DetailView and loading data from 2 endpoints
 
