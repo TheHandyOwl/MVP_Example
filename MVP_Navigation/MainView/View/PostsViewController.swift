@@ -30,6 +30,7 @@ class PostsViewController: UIViewController {
 
 extension PostsViewController {
     func setupUI() {
+        title = "POSTS LIST"
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
     }
@@ -55,13 +56,12 @@ extension PostsViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        postsPresenter.postSelected(post: posts[indexPath.row])
+        postsPresenter.postSelected(view: self, post: posts[indexPath.row])
     }
     
 }
 
 extension PostsViewController : UITableViewDelegate {
-    
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -88,14 +88,6 @@ extension PostsViewController : PostsViewDelegate {
             }
         } else {
             Alert.okAlert(viewController: self, title: "Loading posts", body: "No posts availables")
-        }
-    }
-    
-    func displayPost(post: Post) {
-        if let title = post.title, let body = post.body {
-            Alert.okAlert(viewController: self, title: title, body: body)
-        } else {
-            Alert.okAlert(viewController: self, title: "Error", body: "Post info is not available")
         }
     }
     

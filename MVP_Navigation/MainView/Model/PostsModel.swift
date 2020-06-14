@@ -11,10 +11,10 @@ import Foundation
 typealias Posts = [Post]
 
 struct Post: Codable {
-    let userID, id: Int?
+    let userId, id: Int?
     let title, body: String?
 
     enum CodingKeys: String, CodingKey {
-        case userID, id, title, body
+        case userId, id, title, body
     }
 }

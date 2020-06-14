@@ -36,8 +36,10 @@
 		07CD09082495527100AEB5E5 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD08FF2495527000AEB5E5 /* PostsModel.swift */; };
 		07CD09092495527100AEB5E5 /* PostsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD09012495527000AEB5E5 /* PostsPresenter.swift */; };
 		07CD090A2495527100AEB5E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD09032495527000AEB5E5 /* Alerts.swift */; };
-		07CD090B2495527100AEB5E5 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD09042495527000AEB5E5 /* PostsService.swift */; };
+		07CD090B2495527100AEB5E5 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD09042495527000AEB5E5 /* WebService.swift */; };
 		07CD090C2495527100AEB5E5 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD09062495527000AEB5E5 /* PostsViewController.swift */; };
+		07CD091824967BB500AEB5E5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD091724967BB500AEB5E5 /* DetailViewController.swift */; };
+		07CD091A24967E0E00AEB5E5 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD091924967E0E00AEB5E5 /* DetailViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +78,10 @@
 		07CD08FF2495527000AEB5E5 /* PostsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		07CD09012495527000AEB5E5 /* PostsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsPresenter.swift; sourceTree = "<group>"; };
 		07CD09032495527000AEB5E5 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		07CD09042495527000AEB5E5 /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		07CD09042495527000AEB5E5 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		07CD09062495527000AEB5E5 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		07CD091724967BB500AEB5E5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		07CD091924967E0E00AEB5E5 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +243,9 @@
 				07CD08EA2495523700AEB5E5 /* AppDelegate.swift */,
 				07CD08EC2495523700AEB5E5 /* SceneDelegate.swift */,
 				07CD09022495527000AEB5E5 /* Helper */,
-				07CD08FE2495527000AEB5E5 /* Model */,
-				07CD09002495527000AEB5E5 /* Presenter */,
+				07CD090E2496341900AEB5E5 /* DetailView */,
+				07CD090D249633E800AEB5E5 /* MainView */,
 				07CD08FC2495527000AEB5E5 /* Resources */,
-				07CD09052495527000AEB5E5 /* View */,
 				07CD08F02495523700AEB5E5 /* Main.storyboard */,
 				07CD08F32495523900AEB5E5 /* Assets.xcassets */,
 				07CD08F52495523A00AEB5E5 /* LaunchScreen.storyboard */,
@@ -279,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				07CD09032495527000AEB5E5 /* Alerts.swift */,
-				07CD09042495527000AEB5E5 /* PostsService.swift */,
+				07CD09042495527000AEB5E5 /* WebService.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -288,6 +291,41 @@
 			isa = PBXGroup;
 			children = (
 				07CD09062495527000AEB5E5 /* PostsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07CD090D249633E800AEB5E5 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				07CD08FE2495527000AEB5E5 /* Model */,
+				07CD09052495527000AEB5E5 /* View */,
+				07CD09002495527000AEB5E5 /* Presenter */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		07CD090E2496341900AEB5E5 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				07CD09102496343100AEB5E5 /* View */,
+				07CD090F2496342A00AEB5E5 /* Presenter */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		07CD090F2496342A00AEB5E5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07CD091924967E0E00AEB5E5 /* DetailViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		07CD09102496343100AEB5E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07CD091724967BB500AEB5E5 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,11 +493,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07CD09082495527100AEB5E5 /* PostsModel.swift in Sources */,
-				07CD090B2495527100AEB5E5 /* PostsService.swift in Sources */,
+				07CD090B2495527100AEB5E5 /* WebService.swift in Sources */,
 				07CD08EB2495523700AEB5E5 /* AppDelegate.swift in Sources */,
 				07CD090C2495527100AEB5E5 /* PostsViewController.swift in Sources */,
+				07CD091A24967E0E00AEB5E5 /* DetailViewPresenter.swift in Sources */,
 				07CD09092495527100AEB5E5 /* PostsPresenter.swift in Sources */,
 				07CD090A2495527100AEB5E5 /* Alerts.swift in Sources */,
+				07CD091824967BB500AEB5E5 /* DetailViewController.swift in Sources */,
 				07CD08ED2495523700AEB5E5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

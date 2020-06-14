@@ -10,16 +10,15 @@ import UIKit
 
 protocol PostsViewDelegate : NSObjectProtocol {
     func displayPosts(posts : Posts)
-    func displayPost(post : Post)
 }
 
 class PostsPresenter {
 
-    private var postsService : PostsService?
+    private var webService : WebService?
     private var postsViewDelegate : PostsViewDelegate?
     
     init() {
-        postsService = PostsService()
+        webService = WebService()
     }
 
 }
@@ -35,7 +34,7 @@ extension PostsPresenter {
 extension PostsPresenter {
     
     func getPosts () {
-        postsService?.getPosts(callback: { (posts) in
+        webService?.getPosts(callback: { (posts) in
             if let posts = posts {
                 self.postsViewDelegate?.displayPosts(posts: posts)
             } else {
@@ -44,9 +43,18 @@ extension PostsPresenter {
         })
     }
 
-    func postSelected (post: Post) {
-        postsViewDelegate?.displayPost(post: post)
+    func postSelected (view: UIViewController, post: Post) {
+        navToDetailViewController(view: view, post: post)
     }
     
+}
+
+// Routing
+extension PostsPresenter {
+    private func navToDetailViewController(view: UIViewController, post: Post) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.post = post
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

@@ -1,5 +1,5 @@
 //
-//  PostsService.swift
+//  WebService.swift
 //  MVP_Example
 //
 //  Created by Carlos on 13/06/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PostsService {
+class WebService {
     
     func getPosts(callback: @escaping (Posts?) -> Void ) {
         /*
@@ -29,6 +29,28 @@ class PostsService {
                 let decoder = JSONDecoder()
                 guard let hasData = data else { return }
                 dataArray = try! decoder.decode(Posts.self, from: hasData)
+                callback(dataArray)
+            }
+        }.resume()
+    }
+    
+    func getPost(authorID: String, callback: @escaping (Posts?) -> Void ) {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(authorID)/posts") else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if error != nil {
+                print("Pasa por aquí: 0")
+                callback(nil)
+            } else {
+                sleep(2)
+                var dataArray : Posts?
+                let decoder = JSONDecoder()
+                guard let hasData = data else { return }
+                do {
+                    dataArray = try decoder.decode(Posts.self, from: hasData)
+                } catch {
+                    callback(nil)
+                }
                 callback(dataArray)
             }
         }.resume()
